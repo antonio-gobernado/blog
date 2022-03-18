@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "username": "user",
+      "id": "91d86b2f-f165-4a3a-bfd8-1aeccdf86a80",
+      "password": "$2a$10$3dV0t7/V4jVoX6BDmdU7auY1GuyxeP31TeqITT4LrCnieveZECuV6"
+    },
+    {
+      "username": "antonio",
+      "id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8",
+      "password": "$2a$10$Ab85j2wq9hARWTrv7oF3cenr.hWjgIVgKDcaWQVk5LsIx/MOoRbLG"
+    }
+  ],
+  "books": [
+    {
+      "title": "Book One",
+      "id": "4a588d9d-dd53-4e29-a548-4932cab38d4c",
+      "author_id": "1"
+    },
+    {
+      "title": "Book Two",
+      "id": "2a86570e-5b7e-491d-9249-264a0815f64f",
+      "author_id": "2"
+    },
+    {
+      "title": "mas libros",
+      "id": "a703fdde-187f-49ba-8b8d-f5a53b324e62",
+      "author_id": "1"
+    },
+    {
+      "title": "otro mas",
+      "id": "86d89d7e-486a-47aa-9cb8-e27a963833cf",
+      "author_id": "2"
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "name": "author one"
+    },
+    {
+      "id": "2",
+      "name": "author two"
+    },
+    {
+      "id": "3",
+      "name": "author t3"
+    }
+
+  ]
+}
