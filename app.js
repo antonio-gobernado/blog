@@ -39,6 +39,7 @@ var sessionOptions = {
 app.use(
   session({
     secret: "String for encrypting cookies.",
+    store: new store({ filename: path.join("data", "sessionFile.json") }),
     name: "Cookie_name",
     cookie: { maxAge: 7 * 24 * 3600 * 1000 },
     proxy: true,
