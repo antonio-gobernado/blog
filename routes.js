@@ -34,10 +34,19 @@ router.get("/books", function (req, res) {
 });
 
 // display all books del user
-router.get("/books/:author_id", function (req, res) {
-  var books = db.get("books").find({ id: req.params.author_id }).value();
+router.get("/task", function (req, res) {
+  var dbUser = db.get("users").find({ id: req.user.id }).value();
+  var author_id = dbUser.id;
 
-  res.render("tasks", { books: books });
+  var array = [];
+  var books = db.get("books").value();
+  books.forEach((book) => {
+    if (book.author_id == author_id) {
+      array.push(book.title);
+    }
+  });
+
+  res.render("tasks", { books: array });
 });
 
 // create a new book
@@ -76,7 +85,12 @@ var signup_view_path = path.join("auth", "signup");
 var login_view_path = path.join("auth", "login");
 
 // display signup page only if user is not logged in
+/*
 router.get("/signup", isLoggedOut(), function (req, res) {
+  res.render(signup_view_path);
+});*/
+
+router.get("/signup", function (req, res) {
   res.render(signup_view_path);
 });
 
@@ -84,6 +98,7 @@ router.get("/signup", isLoggedOut(), function (req, res) {
 router.post("/signup", function (req, res) {
   // remove extra spaces
   var username = req.body.username.trim();
+  var role = req.body.role;
   var password = req.body.password.trim();
   var password2 = req.body.password2.trim();
 
@@ -113,6 +128,7 @@ router.post("/signup", function (req, res) {
   var options = {
     username: username,
     password: password,
+    role: role,
     successRedirectUrl: "/",
     signUpTemplate: signup_view_path,
   };

@@ -3,17 +3,32 @@
     {
       "username": "user",
       "id": "91d86b2f-f165-4a3a-bfd8-1aeccdf86a80",
-      "password": "$2a$10$3dV0t7/V4jVoX6BDmdU7auY1GuyxeP31TeqITT4LrCnieveZECuV6"
+      "password": "$2a$10$3dV0t7/V4jVoX6BDmdU7auY1GuyxeP31TeqITT4LrCnieveZECuV6",
+      "role": "Usuario"
     },
     {
       "username": "antonio",
       "id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8",
-      "password": "$2a$10$Ab85j2wq9hARWTrv7oF3cenr.hWjgIVgKDcaWQVk5LsIx/MOoRbLG"
+      "password": "$2a$10$Ab85j2wq9hARWTrv7oF3cenr.hWjgIVgKDcaWQVk5LsIx/MOoRbLG",
+      "role": "Administrador"
     },
     {
       "username": "pepe",
       "id": "53cd9221-ef52-4bd0-8ae6-3292ba812353",
-      "password": "$2a$10$PqMp1XQHNeZKtdQyf8v8AuQkBd9vAYrAhVJXuLgGzjUU422bR8vBy"
+      "password": "$2a$10$PqMp1XQHNeZKtdQyf8v8AuQkBd9vAYrAhVJXuLgGzjUU422bR8vBy",
+      "role": "Usuario"
+    },
+    {
+      "username": "jose",
+      "id": "be3bf7bd-78ee-4d92-a564-594929ac3d93",
+      "password": "$2a$10$mW23T0Itowm8vALvNu3ZjuMkQP.cdWmWg.RoFz3LkgI4y.JHuMX6m",
+      "role": "Administrador"
+    },
+    {
+      "username": "john",
+      "id": "2f782ef3-bc7e-4aa2-bf69-edea3d17d5e9",
+      "password": "$2a$10$W8fOScJQ/CUtxKG8VLyVo.HBKRKeFafXUAMfFoQPvQebjF24H.C56",
+      "role": "Usuario"
     }
   ],
   "books": [
@@ -60,6 +75,16 @@
     {
       "title": "el libro de pepe",
       "id": "5600be42-2bf2-469c-929b-cb2843c65f17",
+      "author_id": "53cd9221-ef52-4bd0-8ae6-3292ba812353"
+    },
+    {
+      "title": "otro de antonio",
+      "id": "eeba88e8-280d-472f-845a-77748f9fc84f",
+      "author_id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8"
+    },
+    {
+      "title": "hacer el amor",
+      "id": "7f9ddf33-5719-4393-aa64-f3298fd2f336",
       "author_id": "53cd9221-ef52-4bd0-8ae6-3292ba812353"
     }
   ],

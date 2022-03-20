@@ -1,4 +1,18 @@
-<h1>Home</h1>
+
 
 
 <div>Bienvenido  <%= JSON.stringify(user.username) %> </div>
+
+
+
+
+
+<form action="/createBook" method="post">
+  <div class="form-group">
+    <label for="title">Escribe una cosa por hacer</label>
+    <input type="text" class="form-control" name="title" id="title">
+  </div>
+
+  
+  <input type="submit" class="btn btn-primary">
+</form>

@@ -1,7 +1,20 @@
-<h1>Mis libros</h1>
+<h1>Cosas</h1>
 
 <ul>
-  <% books.forEach(function(book) { %>
-    <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+  <% books.forEach(function(book, index) {%>
+   
+
+<div class="card">
+    <div class="card-header">
+      Item: <%= index+1; %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><li><%= book %></li></h5>
+    
+    
+    </div>
+  </div>
+
+   
   <% }) %>
 </ul>
