@@ -63,7 +63,7 @@ router.post("/createBook", function (req, res) {
     .write();
 
   // redirect
-  res.redirect("/books");
+  res.redirect("/task");
 });
 
 // display one book
