@@ -33,79 +33,11 @@
   ],
   "books": [
     {
-      "title": "Book One",
-      "id": "4a588d9d-dd53-4e29-a548-4932cab38d4c",
-      "author_id": "1"
-    },
-    {
-      "title": "Book Two",
-      "id": "2a86570e-5b7e-491d-9249-264a0815f64f",
-      "author_id": "2"
-    },
-    {
-      "title": "mas libros",
-      "id": "a703fdde-187f-49ba-8b8d-f5a53b324e62",
-      "author_id": "1"
-    },
-    {
-      "title": "otro mas",
-      "id": "86d89d7e-486a-47aa-9cb8-e27a963833cf",
-      "author_id": "2"
-    },
-    {
-      "title": "iooi",
-      "id": "4ccd00ff-5d3f-4ff5-88cb-bf1593930fe2",
-      "author_id": "3"
-    },
-    {
-      "title": "",
-      "id": "d60b0cc1-d2ce-4883-90b5-92453a17385a",
-      "author_id": "1"
-    },
-    {
-      "title": "hola",
-      "id": "d5e76da4-e400-4c61-a5c4-ebfe4513535e",
-      "author_id": "antonio"
-    },
-    {
-      "title": "mas coas",
-      "id": "943452a1-205a-46da-9fda-1c37e10d9226",
-      "author_id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8"
-    },
-    {
-      "title": "el libro de pepe",
-      "id": "5600be42-2bf2-469c-929b-cb2843c65f17",
-      "author_id": "53cd9221-ef52-4bd0-8ae6-3292ba812353"
-    },
-    {
-      "title": "otro de antonio",
-      "id": "eeba88e8-280d-472f-845a-77748f9fc84f",
-      "author_id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8"
-    },
-    {
-      "title": "hacer el amor",
-      "id": "7f9ddf33-5719-4393-aa64-f3298fd2f336",
-      "author_id": "53cd9221-ef52-4bd0-8ae6-3292ba812353"
-    },
-    {
-      "title": "una cosa",
-      "id": "b0b578b6-a240-4a9f-a30f-99a1804c0aa8",
-      "author_id": "2f782ef3-bc7e-4aa2-bf69-edea3d17d5e9"
-    },
-    {
-      "title": "mas",
-      "id": "5461e1d5-1268-48ef-834b-e99e7a2ecdff",
-      "author_id": "2f782ef3-bc7e-4aa2-bf69-edea3d17d5e9"
-    },
-    {
-      "title": "mas cosas",
-      "id": "ed1e451b-ed20-44a4-a56a-edac1f8ba822",
-      "author_id": "2f782ef3-bc7e-4aa2-bf69-edea3d17d5e9"
-    },
-    {
-      "title": "una cosa",
-      "id": "3c432064-4a95-44b3-901f-80b35d89340a",
-      "author_id": "44ea67cb-ae5c-4837-a5b0-7dea976a92b8"
+      "title": "ad",
+      "desc": "dssd",
+      "imagen": "logo.png",
+      "comentario": "sknnsdlklks",
+      "id": "ed63a9f1-9461-4d09-aa74-8b94372aa3d8"
     }
   ],
   "authors": [

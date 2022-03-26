@@ -20,32 +20,35 @@
         
         
           <ul class="nav navbar-nav">
-          
+            <li><a class="nav-link" href="/blog">Blog</a></li>
+       <!---  
           <% if (user) { %>
               <% if (user.role=="Administrador") {%>
-              <li><a class="nav-link" href="/books">Books</a></li>
+              <li><a class="nav-link" href="/books">Administrar Comentarios</a></li>
               <% }%>
-          <li><a class="nav-link" href="/task">Mis Datos</a></li>
+          <li><a class="nav-link" href="/task">Mis Datos</a></li> 
           <li><a class="nav-link" href="/profile">Mi perfil</a></li>
        
-        <% }%>
+        <% }%> -->
           </ul>
 
+       
           <ul class="navbar-nav mx-auto">
           
-              <a class="nav-link" href="/">Nombre App</a>
-           
+           <li><a class="nav-link" href="/post">Picha aqui para añadir Post</a>
+           </li>   
           </ul>
+          
 
           <ul class="nav navbar-nav">
           <% if (user) { %>
             <li><a class="nav-link" href="/profile"><%= user && user.username %></a></li>
             <li><a class="nav-link" href="/logout">Logout</a></li>
             <% if (user.role=="Administrador") {%>
-            <li><a class="nav-link" href="/signup">Sign Up</a></li>
+            <li><a class="nav-link" href="/signup">Crear Usuarios</a></li>
             <% }%>
           <% } else { %>
-            <li><a class="nav-link" href="/login">Login</a></li>
+            <li><a class="nav-link" href="/login">Login(Administrador)</a></li>
           
            
             

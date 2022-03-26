@@ -1,14 +1,35 @@
-<h1>Books</h1>
 
-<ul>
-  <% books.forEach(function(book) {%>
-    <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col"></div>
+    <div class="col">
+<% books.forEach(function(book) {%>
+<div class="card" style="width: 18rem;">
+ 
+
+  <div class="card-body">
+    <h5 class="card-title"><%= book.title %></h5>
+    <% if (user) { %>
+    <a href="/books/<%= book.id %>" class="btn btn-primary">Ir</a>
+  </div>
+</div>
+
+<div style="padding: 10px"> </div>
+
   <% }) %>
-</ul>
+</div>
+
+<div class="col"></div>
+
+</div>
+</div>
 
 
-
-
+<!--
 <h1>New Book</h1>
 
 <form action="/createBook" method="post">
@@ -26,4 +47,4 @@
     </select>
   </div>
   <input type="submit" class="btn btn-primary">
-</form>
+</form>-->

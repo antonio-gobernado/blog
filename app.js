@@ -8,11 +8,13 @@ var session = require("express-session");
 var store = require("connect-nedb-session")(session);
 var path = require("path");
 var flash = require("connect-flash");
+const multer = require("multer");
+const fs = require("fs");
 require("./config/environment");
 var routes = require("./routes");
 
 var app = express();
-
+app.use(express.static(path.join(__dirname, "public/uploads")));
 // set view engine
 app.set("view engine", "ejs");
 app.use(expressLayouts);
@@ -75,6 +77,8 @@ app.use(function (req, res, next) {
 
 // routes
 app.use("/", routes);
+
+// Static files
 
 // start server
 app.listen(3000, function () {

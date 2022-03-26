@@ -1,0 +1,52 @@
+
+
+<div class="jumbotron">
+    <h1 class="display-4">Bienvenido al Blog</h1>
+    <p class="lead">Este es un blog donde puedes compartir tus fotos y comentarios con los demas</p>
+    <hr class="my-4">
+    <p></p>
+   
+</div>
+
+  
+  <div class="container">
+    <% books.forEach(function(book) {%>
+
+      
+    <div class="row">
+  
+      <div class="col"></div>
+      <div class="col">
+ 
+  <div class="card" style="width: 18rem;">
+    <img src="<%= book.imagen %>"  class="img-thumbnail" alt="...">
+  
+    <div class="card-body">
+      <h5 class="card-title"><%= book.title %></h5>
+      <p class="card-text"><%= book.desc %></p>
+      <% if (user) { %>
+        <a href="/books/<%= book.id %>" class="btn btn-primary">Ir al post</a>
+        
+        <%}%>
+    </div>
+  </div>
+ 
+  <div style="padding: 10px"> </div>
+  
+    
+  </div>
+  
+  <div class="col">
+
+    <h3>Comentarios:</h3>
+
+    <h5><%= book.comentario %></h5>
+
+    
+  </div>
+ 
+  </div>
+  <% }) %>
+  </div>
+  
+  

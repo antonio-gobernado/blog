@@ -4,6 +4,8 @@ var path = require("path");
 var uuid = require("uuid");
 var authService = require("./services/authService");
 var passport = require("passport");
+const multer = require("multer");
+const fs = require("fs");
 authService.configurePassport(passport);
 
 // connect to database
@@ -11,14 +13,36 @@ authService.configurePassport(passport);
 // right type of slashes (\ vs /) based on the operatin system
 var db = low(path.join("data", "db.json"));
 
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "/public/uploads"),
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+const uploadImage = multer({
+  storage,
+  limits: { fileSize: 1000000 },
+}).single("imagen");
 //==========================
 // root route
 //==========================
 
 // display home page
+
 router.get("/", isLoggedIn(), function (req, res) {
-  var dbUser = db.get("users").find({ id: req.user.id }).value();
-  res.render("home", { dbUser: dbUser });
+  var books = db.get("books").value();
+  var authors = db.get("users").value();
+  res.render("blog", { books: books, authors: authors });
+});
+
+router.get("/", isLoggedOut(), function (req, res) {
+  var books = db.get("books").value();
+  res.render("books", { books: books });
+});
+
+router.get("/blog", function (req, res) {
+  var books = db.get("books").value();
+  res.render("blog", { books: books });
 });
 
 //==========================
@@ -31,6 +55,12 @@ router.get("/books", function (req, res) {
   var authors = db.get("users").value();
 
   res.render("books", { books: books, authors: authors });
+});
+
+//para API tener el libro primero en formato json
+router.get("/bookis", function (req, res) {
+  var books = db.get("books").value();
+  return res.status(200).json(books);
 });
 
 // display all books del user
@@ -49,7 +79,72 @@ router.get("/task", function (req, res) {
   res.render("tasks", { books: array });
 });
 
-// create a new book
+//API
+
+//crear post por usuario anonimo
+
+router.get("/post", isLoggedOut(), function (req, res) {
+  res.render("post");
+});
+
+router.post(
+  "/createPost",
+  isLoggedOut(),
+  multer({ dest: path.join(__dirname, "/public/uploads") }).single("imagen"),
+  function (req, res) {
+    // get data from form
+    var title = req.body.title;
+    var desc = req.body.desc;
+
+    var archivo = req.file.originalname;
+
+    //const ext = path.extname(req.file.originalname).toLocaleLowerCase();
+    fs.rename(
+      req.file.path,
+      `./public/uploads/${req.file.originalname}`,
+      () => {
+        console.log("recibido");
+      }
+    );
+
+    const ruta = "../public/uploads/" + archivo;
+    // insert new book into database
+    db.get("books")
+      .push({
+        title: title,
+        desc: desc,
+        imagen: "/" + archivo,
+        comentario: "No hay",
+        id: uuid(),
+      })
+      .write();
+
+    // redirect
+    res.redirect("/blog");
+  }
+);
+
+//crear comentario por administrador
+
+router.post("/books/:id", function (req, res) {
+  const result = db
+    .get("books")
+    .find({ id: req.params.id })
+    .assign(req.body)
+    .write();
+  // redirect
+  res.redirect("/blog");
+});
+
+//eliminar post  por administrador
+
+router.get("/delete/:id", function (req, res) {
+  const result = db.get("books").remove({ id: req.params.id }).write();
+  // redirect
+  res.redirect("/blog");
+});
+
+// crear post por usuario logueado
 router.post("/createBook", function (req, res) {
   var dbUser = db.get("users").find({ id: req.user.id }).value();
   // get data from form
@@ -155,7 +250,7 @@ router.post(
 router.get("/logout", function (req, res) {
   req.logout();
   req.flash("success", "You are logged out");
-  res.redirect("/");
+  res.redirect("/blog");
 });
 
 // display profile page if user is logged in

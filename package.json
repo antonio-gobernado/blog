@@ -12,6 +12,7 @@
     "express-session": "^1.15.3",
     "express-validator": "^3.2.1",
     "lowdb": "^0.16.2",
+    "multer": "^1.4.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "uuid": "^3.1.0"
@@ -22,5 +23,19 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-  }
+  },
+  "name": "booksnode",
+  "description": "Demo app done in Express, [lowdb](https://github.com/typicode/lowdb), and [Passport](http://passportjs.org/). - lowdb is a small local JSON database - Passport is authentication library",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonio-gobernado/books.git"
+  },
+  "author": "Antonio Gobernado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonio-gobernado/books/issues"
+  },
+  "homepage": "https://github.com/antonio-gobernado/books#readme"
 }
