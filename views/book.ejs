@@ -1,27 +1,25 @@
-<h1>Post</h1>
 
-<div class="card" style="width: 18rem;">
-    <img src="/<%= book.imagen %>"  class="img-fluid" alt="Responsive image" />
+
+ <%- include('../views/partials/header'); %>
+
+<h1>Emisora</h1>
+
+
+<div class="container">
+
+
+<div class="card" style="width: 70rem;">
+  <img src="<%= book.image %>" height="25%" width="25%"  />
     <div class="card-body">
       <h5 class="card-title"><%= book.title %></h5>
-      <p class="card-text"><%= book.desc %></p>      
+      <p class="card-text"><%= book.url %></p>      
       
    
-      <a href="/delete/<%= book.id %>" class="btn btn-danger">Eliminar</a>
+     
     </div>
   </div>
 
 
-
-  <form action="/books/<%= book.id %>" method="post">
-
-
-    <div class="form-group">
-      <label for="title">Escribe comentario</label>
-      <input type="text" class="form-control" name="comentario" id="comentario">
-    </div> 
-
-
-    
-    <input type="submit" class="btn btn-primary">
-</form>
+</div>
+  
+ <%- include('../views/partials/footer'); %>

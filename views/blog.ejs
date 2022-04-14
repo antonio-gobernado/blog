@@ -1,8 +1,10 @@
 
 
+ <%- include('../views/partials/header'); %>
+
 <div class="jumbotron">
-    <h1 class="display-4">Bienvenido al Blog</h1>
-    <p class="lead">Este es un blog donde puedes compartir tus fotos y comentarios con los demas</p>
+    <h1 class="display-4">Listado de Emisoras</h1>
+    <p class="lead">Esta API controla las emisoras de España para enviarlas a Appgyver</p>
     <hr class="my-4">
     <p></p>
    
@@ -10,43 +12,52 @@
 
   
   <div class="container">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+      
     <% books.forEach(function(book) {%>
 
-      
+      <tr>
+         
     <div class="row">
   
-      <div class="col"></div>
+    
       <div class="col">
- 
-  <div class="card" style="width: 18rem;">
-    <img src="<%= book.imagen %>"  class="img-thumbnail" alt="...">
-  
-    <div class="card-body">
-      <h5 class="card-title"><%= book.title %></h5>
-      <p class="card-text"><%= book.desc %></p>
-      <% if (user) { %>
-        <a href="/books/<%= book.id %>" class="btn btn-primary">Ir al post</a>
+
         
-        <%}%>
-    </div>
-  </div>
+              <th scope="row"><%= book.id %></th>
+              <td><h5 class="card-title"><%= book.title %></h5></td>
+              <td> <p class="card-text"><%= book.url %></p></td>
+              <td><img src="<%= book.image %>" height="25%" width="25%"  /></td>
+              <td>  <a href="/delete/<%= book.id %>" class="btn btn-danger">Eliminar</a>  <a href="/books/<%= book.id %>" class="btn btn-success">Ver</a> </td>
+     
+     
+    
  
-  <div style="padding: 10px"> </div>
+  
   
     
   </div>
   
-  <div class="col">
-
-    <h3>Comentarios:</h3>
-
-    <h5><%= book.comentario %></h5>
-
-    
-  </div>
  
   </div>
   <% }) %>
+
+      </tr>
+                
+      </tbody>
+      </table>
   </div>
   
   
+ <%- include('../views/partials/footer'); %>

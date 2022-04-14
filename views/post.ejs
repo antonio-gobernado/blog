@@ -1,30 +1,44 @@
 
 
-<img src="../assets/minion.jpg" alt="..." class="img-thumbnail" />
+ <%- include('../views/partials/header'); %>
 
 
+<div class="container">
+  <div class="col"></div>
+
+  <div class="col">
 <form action="/createPost" method="post" enctype="multipart/form-data">
 
 
     <div class="form-group">
-      <label for="title">Escribe titulo</label>
+      <label for="title">Escribe emisora</label>
       <input type="text" class="form-control" name="title" id="title">
     </div>
 
     <div class="form-group">
-        <label for="description">Escribe descripcion</label>
-        <input type="text" class="form-control" name="desc" id="desc">
+        <label for="description">Escribe url</label>
+        <input type="text" class="form-control" name="url" id="desc">
     </div>
 
     <div class="form-group">
       <label for="description">Selecciona imagen</label>
-      <input type="file" class="form-control" name="imagen" id="imagen">
+      <input type="file" class="form-control" name="image" id="imagen">
   </div>
 
-    
+
   
 
 
     
     <input type="submit" class="btn btn-primary">
 </form>
+
+</div>
+
+<div class="col"></div>
+
+</div>    
+
+
+
+<%- include('../views/partials/footer'); %>
